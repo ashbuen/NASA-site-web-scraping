@@ -4,6 +4,6 @@ The purpose of the challenge is to display the ability to web-scrape a website t
 
 Using the data obtained, the other part of the challenge was to create a HTML page that displays the data and contains a button that 'scrapes' the information.
 
-The information that was obtained came from three different sites and were: the latest article with its brief paragraph, a featured image, and a table with data. 
+The information that was obtained came from four different sites and were: the latest article with its brief paragraph, a featured image, and a table with data. 
 
 The tools used were splinter, BeautifulSoup, ChromeDriverManager, pandas, flask, and MongoDB.
