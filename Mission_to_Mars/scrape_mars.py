@@ -9,4 +9,5 @@ def init_browser():
 
 def scrape_info():
     browser = init_browser()
+    mars = {}
     
