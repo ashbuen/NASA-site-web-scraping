@@ -33,3 +33,20 @@ def scrape_info():
 
 # Quit Mars scraping
     browser.quit()
+
+# Splinter setup for JPL
+    executable_path = {'executable_path' : "/usr/local/bin/chromedriver"}
+    browser = Browser('chrome', **executable_path, headless = False)
+
+# JPL Url
+    url2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
+    browser.visit(url2)
+    html = browser.html
+    soup = bs(html, 'html.parser')
+    print(soup.prettify())
+
+# JPL featured image
+    featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA09178_ip.jpg'
+
+# Quit JPL browser
+    browser.quit()
