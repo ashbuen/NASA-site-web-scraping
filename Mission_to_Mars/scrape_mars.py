@@ -42,8 +42,8 @@ def scrape_info():
     print(soup.prettify())
 
 # JPL featured image
-    featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA09178_ip.jpg'
-
+    featured_image_url = soup.find(name = 'a', class_ = 'button fancybox')['data-fancybox-href']
+    featured_image_url
 # Mars Facts pandas
     url3 = 'https://space-facts.com/mars/'
     browser.visit(url3)
