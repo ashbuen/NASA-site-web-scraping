@@ -18,9 +18,9 @@ def index():
 # Scrape the scrape_mars file and when done return to landing page
 @app.route("/scrape")
 def scraper():
-    # mars_data = mongo.db.mars
-    mars_info = scrape_mars.scrape_info()
-    mongo.db.collection.update({}, mars_info, upsert=True)
+
+    mars_data = scrape_mars.scrape_info()
+    mongo.db.collection.update({}, mars_data, upsert=True)
 
 # Redirect to homepage
     return redirect("/")
