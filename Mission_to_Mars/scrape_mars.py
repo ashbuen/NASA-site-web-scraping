@@ -12,7 +12,7 @@ def init_browser():
 def scrape():
     browser = init_browser()
     latest_title = {}
-    # latest_paragraph = {}
+    latest_paragraph = {}
     time.sleep(1)
 
     
@@ -29,12 +29,12 @@ def scrape():
 # Scrape latest title
     latest_title = soup.select('div.content_title')[1]
     latest_title
-    return latest_title
 
 # Scrape paragraph of latest title
     latest_paragraph = soup.find_all('div', 'article_teaser_body')[0]
     latest_paragraph
-    return latest_paragraph
+    browser.quit()
+    return latest_paragraph, latest_title
 
 # JPL Url
     url2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
