@@ -9,9 +9,10 @@ def init_browser():
     executable_path = {'exectuable_path': "ChromeDriverManager().install()"}
     return Browser("chrome", **executable_path, headless=False)
 
-def scrape_info():
+def scrape():
     browser = init_browser()
-    mars_data = {}
+    latest_title = {}
+    # latest_paragraph = {}
     time.sleep(1)
 
     
@@ -24,15 +25,16 @@ def scrape_info():
 
 # Parser the html
     soup = bs(html, "html.parser")
-    print(soup.prettify())
     
 # Scrape latest title
     latest_title = soup.select('div.content_title')[1]
     latest_title
+    return latest_title
 
 # Scrape paragraph of latest title
     latest_paragraph = soup.find_all('div', 'article_teaser_body')[0]
     latest_paragraph
+    return latest_paragraph
 
 # JPL Url
     url2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -44,7 +46,8 @@ def scrape_info():
 # JPL featured image
     featured_image_url = soup.find(name = 'a', class_ = 'button fancybox')['data-fancybox-href']
     featured_image_url
-    
+    return featured_image_url
+
 # Mars Facts pandas
     url3 = 'https://space-facts.com/mars/'
     browser.visit(url3)
